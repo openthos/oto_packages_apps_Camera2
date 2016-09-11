@@ -243,7 +243,7 @@ public class CaptureLayoutHelper implements CameraAppUI.NonDecorWindowSizeChange
      */
     private PositionConfiguration getPositionConfiguration(int width, int height,
             float previewAspectRatio, int rotation) {
-        boolean landscape = width > height;
+        boolean landscape = true; // always for landscape for pc.
 
         // If the aspect ratio is defined as fill the screen, then preview should
         // take the screen rect.
@@ -262,8 +262,8 @@ public class CaptureLayoutHelper implements CameraAppUI.NonDecorWindowSizeChange
             }
             // Get the bottom bar width and height.
             float barSize;
-            int longerEdge = Math.max(width, height);
-            int shorterEdge = Math.min(width, height);
+            int longerEdge = width;    // always from width for landscape.
+            int shorterEdge = height;  // always from height for landscape.
 
             // Check the remaining space if fit short edge.
             float spaceNeededAlongLongerEdge = shorterEdge * previewAspectRatio;
