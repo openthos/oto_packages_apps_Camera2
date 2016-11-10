@@ -115,7 +115,7 @@ public class Keys {
             context.getString(R.string.pref_camera_focusmode_default),
             context.getResources().getStringArray(R.array.pref_camera_focusmode_entryvalues));
 
-        String videoQualityBackDefaultValue = context.getString(R.string.pref_video_quality_large);
+        String videoQualityBackDefaultValue = context.getString(R.string.pref_video_quality_medium);
         // TODO: We tweaked the default setting based on model string which is not ideal. Detecting
         // CamcorderProfile capability is a better way to get this job done. However,
         // |CamcorderProfile.hasProfile| needs camera id info. We need a way to provide camera id to
@@ -134,7 +134,7 @@ public class Keys {
         }
 
         settingsManager.setDefaults(KEY_VIDEO_QUALITY_FRONT,
-            context.getString(R.string.pref_video_quality_large),
+            context.getString(R.string.pref_video_quality_medium),
             context.getResources().getStringArray(R.array.pref_video_quality_entryvalues));
         if (!settingsManager.isSet(SettingsManager.SCOPE_GLOBAL, Keys.KEY_VIDEO_QUALITY_FRONT)) {
             settingsManager.setToDefault(SettingsManager.SCOPE_GLOBAL,
